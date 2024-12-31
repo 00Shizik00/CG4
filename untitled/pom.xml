@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.CG4.GuiController"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://javafx.com/javafx/21 ">
+    <children>
+        <HBox layoutX="14.0" layoutY="14.0" spacing="10">
+            <children>
+                <Button fx:id="loadModelButton" mnemonicParsing="false" onAction="#handleLoadModel" text="Load Model"/>
+            </children>
+        </HBox>
+
+        <VBox layoutX="14.0" layoutY="50.0">
+            <Label fx:id="cameraPositionLabel" text="Position">
+                <font>
+                    <Font size="14"/>
+                </font>
+                <textFill>
+                    <Color red="0.109" green="0.723" blue="0.853"/>
+                </textFill>
+            </Label>
+            <HBox spacing="5">
+                <TextField fx:id="scaleXTextField" prefWidth="50" promptText="X"/>
+                <TextField fx:id="scaleYTextField" prefWidth="50" promptText="Y"/>
+                <TextField fx:id="scaleZTextField" prefWidth="50" promptText="Z"/>
+                <Button mnemonicParsing="false" onAction="#handleModelScale" text="Scale"/>
+            </HBox>
+            <HBox spacing="5">
+                <TextField fx:id="rotateXTextField" prefWidth="50" promptText="X"/>
+                <TextField fx:id="rotateYTextField" prefWidth="50" promptText="Y"/>
+                <TextField fx:id="rotateZTextField" prefWidth="50" promptText="Z"/>
+                <Button mnemonicParsing="false" onAction="#handleModelRotation" text="Rotation"/>
+            </HBox>
+            <HBox spacing="5">
+                <TextField fx:id="translateXTextField" prefWidth="50" promptText="X"/>
+                <TextField fx:id="translateYTextField" prefWidth="50" promptText="Y"/>
+                <TextField fx:id="translateZTextField" prefWidth="50" promptText="Z"/>
+                <Button mnemonicParsing="false" onAction="#handleModelTranslation" text="Translation"/>
+            </HBox>
+
+        </VBox>
+
+        <Canvas fx:id="canvas" layoutX="200.0" layoutY="14.0" height="500.0" width="600.0"
+                onKeyPressed="#handleKeyPressed"/>
+    </children>
+
+</AnchorPane>
